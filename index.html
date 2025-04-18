@@ -20,10 +20,10 @@
       }
 
       img {
-        width: 300px; /* Taille initiale du logo sur bureau */
+        width: 300px; /* Logo deux fois plus grand */
         margin-bottom: 20px;
         opacity: 0;
-        animation: fadeInZoom 5s forwards; /* Animation modifiée pour durer plus longtemps */
+        animation: fadeIn 2s forwards, grow 3s forwards;
       }
 
       .spinner {
@@ -48,7 +48,7 @@
         font-size: 1rem;
         color: #333;
         position: absolute;
-        bottom: 10%; /* Positionne l'adresse de contact au 3/4 en bas de la page */
+        bottom: 25%; /* Positionne l'adresse de contact au 3/4 en bas de la page */
       }
 
       @keyframes spin {
@@ -66,20 +66,18 @@
         }
       }
 
-      @keyframes fadeInZoom {
+      @keyframes grow {
         0% {
-          opacity: 0;
-          transform: scale(1); /* Démarre avec une taille normale */
+          transform: scale(1.5); /* Logo commence plus grand */
         }
         100% {
-          opacity: 1;
-          transform: scale(2); /* Agrandissement final à 2x la taille initiale */
+          transform: scale(2); /* Logo double de taille */
         }
       }
 
       @media (max-width: 600px) {
         img {
-          width: 175px; /* Réduction de la taille du logo pour mobile */
+          width: 250px; /* Ajustement pour mobile */
         }
         p {
           font-size: 1rem;
@@ -90,7 +88,7 @@
       setTimeout(function () {
         document.body.style.animation = 'fadeOut 1s ease-in-out forwards';
         setTimeout(function () {
-          window.location.href = "https://qrco.de/bfumZH";
+          window.location.href = "https://votre-nouvelle-url.com";  /* Remplacer par l'URL désirée */
         }, 1000);
       }, 5000); <!-- Temps de chargement de 5 secondes -->
     </script>

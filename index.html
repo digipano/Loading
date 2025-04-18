@@ -88,9 +88,13 @@
       setTimeout(function () {
         document.body.style.animation = 'fadeOut 1s ease-in-out forwards';
         setTimeout(function () {
-          window.location.href = "https://votre-nouvelle-url.com";  /* Remplacer par l'URL désirée */
-        }, 1000);
-      }, 5000); <!-- Temps de chargement de 5 secondes -->
+          // Récupère le paramètre PDF de l'URL
+          const urlParams = new URLSearchParams(window.location.search);
+          const pdf = urlParams.get('pdf');
+          const pdfUrl = pdf ? `https://panneauxpdf.netlify.app/${pdf}` : "https://panneauxpdf.netlify.app/"; // Redirection vers le PDF
+          window.location.href = pdfUrl;
+        }, 1000); // Délai avant redirection
+      }, 5000); // Temps de chargement de 5 secondes
     </script>
     <style>
       @keyframes fadeOut {

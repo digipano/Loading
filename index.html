@@ -76,19 +76,16 @@
       }
     </style>
     <script>
-    function getPDFUrl() {
-    const params = new URLSearchParams(window.location.search);
-    const file = params.get("pdf");
-    if (!file) return "https://panneauxpdf.netlify.app/default.pdf"; // fallback
-    return `https://panneauxpdf.netlify.app/${file}`;
-  }
-
-  setTimeout(function () {
-    document.body.style.animation = 'fadeOut 1s ease-in-out forwards';
-    setTimeout(function () {
-      window.location.href = getPDFUrl();
-    }, 1000);
-  }, 5000);
+      setTimeout(function () {
+        document.body.style.animation = 'fadeOut 1s ease-in-out forwards';
+        setTimeout(function () {
+          // Récupère le paramètre PDF de l'URL
+          const urlParams = new URLSearchParams(window.location.search);
+          const pdf = urlParams.get('pdf');
+          const pdfUrl = pdf ? `https://panneauxpdf.netlify.app/${pdf}` : "https://panneauxpdf.netlify.app/";
+          window.location.href = pdfUrl;
+        }, 1000);
+      }, 5000); <!-- Temps de chargement de 5 secondes -->
     </script>
     <style>
       @keyframes fadeOut {

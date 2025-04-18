@@ -20,10 +20,10 @@
       }
 
       img {
-        width: 150px; /* Taille initiale */
+        width: 300px; /* Taille initiale du logo */
         margin-bottom: 20px;
         opacity: 0;
-        animation: fadeInAndScale 2s forwards; /* Nouvelle animation combinée */
+        animation: fadeInZoom 5s forwards; /* Animation modifiée pour durer plus longtemps */
       }
 
       .spinner {
@@ -66,15 +66,18 @@
         }
       }
 
-      /* Nouvelle animation combinée fade + scale */
-      @keyframes fadeInAndScale {
+      @keyframes fadeInZoom {
         0% {
           opacity: 0;
-          transform: scale(0.5); /* Taille initiale réduite */
+          transform: scale(1); /* Démarre avec une taille normale */
+        }
+        50% {
+          opacity: 0.5;
+          transform: scale(1.5); /* Agrandissement à 1.5x de la taille */
         }
         100% {
           opacity: 1;
-          transform: scale(1); /* Taille finale */
+          transform: scale(2); /* Agrandissement final à 2x la taille initiale */
         }
       }
 
@@ -91,11 +94,7 @@
       setTimeout(function () {
         document.body.style.animation = 'fadeOut 1s ease-in-out forwards';
         setTimeout(function () {
-          // Récupère le paramètre PDF de l'URL
-          const urlParams = new URLSearchParams(window.location.search);
-          const pdf = urlParams.get('pdf');
-          const pdfUrl = pdf ? `https://panneauxpdf.netlify.app/${pdf}` : "https://panneauxpdf.netlify.app/";
-          window.location.href = pdfUrl;
+          window.location.href = "https://qrco.de/bfumZH";
         }, 1000);
       }, 5000); <!-- Temps de chargement de 5 secondes -->
     </script>

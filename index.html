@@ -76,12 +76,19 @@
       }
     </style>
     <script>
-      setTimeout(function () {
-        document.body.style.animation = 'fadeOut 1s ease-in-out forwards';
-        setTimeout(function () {
-          window.location.href = "https://qrco.de/bfumZH";
-        }, 1000);
-      }, 5000); <!-- Temps de chargement de 5 secondes -->
+    function getPDFUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const file = params.get("pdf");
+    if (!file) return "https://panneauxpdf.netlify.app/default.pdf"; // fallback
+    return `https://panneauxpdf.netlify.app/${file}`;
+  }
+
+  setTimeout(function () {
+    document.body.style.animation = 'fadeOut 1s ease-in-out forwards';
+    setTimeout(function () {
+      window.location.href = getPDFUrl();
+    }, 1000);
+  }, 5000);
     </script>
     <style>
       @keyframes fadeOut {
